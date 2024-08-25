@@ -1,0 +1,289 @@
+button.neumorphic {
+    font-weight: bold;
+    margin-top: 37px;
+    container-type: inline-size;
+    aspect-ratio: 1/1;
+    border: 0.5rem solid transparent;
+    border-radius: 1rem;
+    color: hsl(0 0% 10%);
+    background-color: #ffffff;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    --shadow:
+        -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+        .5rem .5rem 1rem hsl(0 0% 50% / .5);
+    box-shadow: var(--shadow);
+    outline: none;
+    transition: all 0.1s;
+    overflow: hidden; /* Ensure the progress bar stays within the button */
+}
+
+button.neumorphic:hover,
+button.neumorphic:focus-visible {
+    color: #af000f;
+}
+
+button.neumorphic:active,
+button.neumorphic.active {
+    box-shadow:
+        var(--shadow),
+        inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
+        inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
+    color: hsl(10 80% 50%);
+}
+
+button.neumorphic>span {
+    font-size: var(--normal-font-size);
+}
+
+.buttons {
+    display: grid;
+    width: min(75rem, 62%);
+    margin-inline: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+    gap: 1rem;
+}
+
+.buttons .neumorphic img {
+    margin-top: 20px;  
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .buttons {
+        display: grid;
+        width: min(75rem, 80%);
+        margin-inline: auto;
+        grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+        gap: 2rem;
+    }
+}
+    
+/* For medium devices */
+@media screen and (max-width: 576px) {
+    .buttons {
+        width: min(75rem, 90%);
+        grid-template-columns: repeat(2, minmax(min(8rem, 100%), 1fr));
+        gap: 1rem;
+        margin-top: 20px;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .buttons {
+        width: calc(100% - 20px);
+        grid-template-columns: repeat(2, minmax(min(8rem, calc(50% - 0.125rem)), 1fr));
+        gap: 1rem;
+        margin-top: 20px;
+    }
+}
+  
+/* Skill bar */
+button.neumorphic:hover,
+button.neumorphic:focus-visible {
+    color: #af000f;
+}
+
+button.neumorphic:active,
+button.neumorphic.active {
+    box-shadow:
+        var(--shadow),
+        inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
+        inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
+    color: hsl(10 80% 50%);
+}
+
+button.neumorphic > span {
+    font-size: var(--normal-font-size);
+}
+
+button.neumorphic .icon-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.neumorphic img.skill-icon {
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+button.neumorphic:hover img.skill-icon {
+    opacity: 0;
+}
+
+button.neumorphic .progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+button.neumorphic:hover .progress-container {
+    opacity: 1;
+}
+
+/* Skills progress bar*/
+.progress-bar {
+    position: relative;
+    margin-top: 25px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden; 
+}
+
+.progress-circle {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4CAF50 calc(var(--percentage) * 1%),
+        #e0e0e0 calc(var(--percentage) * 1%)
+    );
+    transition: background 0.6s ease;
+    animation: grow 1s forwards; 
+}
+
+.progress-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-text {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.progress-bar:hover .progress-text {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.progress-bar:hover .progress-circle {
+    animation: rotate 1.5s ease-in-out forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Soft skill*/
+.soft-skills-container {
+    margin-left: 290px;
+    margin-right: 290px;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+  
+  .soft-skills-slider {
+    display: flex;
+    align-items: center;
+    animation: slide 15s linear infinite;
+  }
+  
+  .soft-skill {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    padding: 30px 45px;
+    background-color: var(--title-color);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  /* Keyframes for sliding animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .soft-skills-container {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .soft-skills-slider {
+        animation: slide 6s linear infinite;
+      }
+}
+    
+/* For medium devices */
+@media screen and (max-width: 576px) {
+    .soft-skills-container {
+        margin-left: 25px;
+        margin-right: 25px;
+        padding-top: 60px;
+    }
+
+    .soft-skills-slider {
+        animation: slide 6s linear infinite;
+      }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .soft-skills-container {
+        margin-left: 12px;
+        margin-right: 12px;
+        padding-top: 50px;
+    }
+
+    .soft-skills-slider {
+        animation: slide 4s linear infinite;
+      }
+}
+
+
