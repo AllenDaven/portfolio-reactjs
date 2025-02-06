@@ -13,6 +13,7 @@ import RAPIIcon from "../../assets/restapi.png";
 import TSCRIPTIcon from "../../assets/typescript.png";
 import ARPIcon from "../../assets/axure.png";
 import FIGMAIcon from "../../assets/figma.png";
+import GITIcon from "../../assets/git.png";
 import LIFERAYIcon from "../../assets/liferay.png";
 import PHPIcon from "../../assets/php.png";
 import LARAVELIcon from "../../assets/laravel.png";
@@ -35,7 +36,9 @@ const skills = [
     { icon: SMVCIcon, name: "SPRING MVC", percentage: 80, category: "Back-End" },
     { icon: RJSIcon, name: "REACT JS", percentage: 70, category: "Front-End" },
     { icon: RAPIIcon, name: "REST API", percentage: 85, category: "Back-End" },
+    { icon: FIGMAIcon, name: "FIGMA", percentage: 55, category: "Tools" },
     { icon: ARPIcon, name: "AXURE RP", percentage: 80, category: "Tools" },
+    { icon: GITIcon, name: "GIT", percentage: 80, category: "Tools" },
     { icon: HUBSPOTIcon, name: "HUBSPOT", percentage: 75, category: "Tools" },
     { icon: POSTMANIcon, name: "POSTMAN", percentage: 65, category: "Tools" },
     { icon: POWERBIIcon, name: "POWER BI", percentage: 60, category: "Tools" },
