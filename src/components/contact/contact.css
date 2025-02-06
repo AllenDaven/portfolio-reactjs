@@ -3,6 +3,7 @@
     justify-content: center;
     column-gap: 6rem;
     padding-bottom: 3rem;
+    margin-top: 60px;
 }
 
 .contact__title {
@@ -113,6 +114,7 @@
 @media screen and (max-width: 992px) {
     .contact__container {
         column-gap: 3rem;
+        margin-top: 0px;
     }
 
     .contact__title {
@@ -125,6 +127,7 @@
     .contact__container {
         grid-template-columns: 1fr;
         row-gap: 3rem;
+        margin-top: 0px;
     }
 
     .contact__info {
@@ -152,11 +155,19 @@
     .contact__title {
         margin-top: 3rem;
     }
+
+    .contact__container {
+        margin-top: 0px;
+    }
   }
   
   /* For small devices */
   @media screen and (max-width: 350px) {
     .contact__title {
         margin-top: 3rem;
+    }
+
+    .contact__container {
+        margin-top: 0px;
     }
   }

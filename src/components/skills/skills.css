@@ -213,77 +213,209 @@ button.neumorphic:hover .progress-container {
     }
 }
 
-/* Soft skill*/
-.soft-skills-container {
-    margin-left: 290px;
-    margin-right: 290px;
+/* Center the entire Skills section */
+.skills.section {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 55px; /* Added margin-top for distance above the section title */
+}
+
+/* Responsive adjustments for the Skills section */
+@media screen and (max-width: 992px) {
+    .skills.section {
+        margin-top: 40px; /* Adjust distance for large devices */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills.section {
+        margin-top: 10px; /* Adjust distance for medium devices */
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .skills.section {
+        margin-top: 0px; /* Adjust distance for small devices */
+    }
+}
+
+/* Center and style category buttons */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: center;
+    gap: 0.5rem; /* Adjust spacing between buttons */
+    margin-bottom: 30px; /* Add space below the buttons */
+    margin-top: 75px;
+}
+
+.category-button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid var(--title-color); /* Border color */
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--title-color); /* Text color */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.category-button:hover {
+    background-color: var(--title-color); /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+}
+
+.category-button.active {
+    background-color: var(--title-color); /* Active button background color */
+    color: #ffffff; /* Active button text color */
+    border: 2px solid var(--title-color); /* Keep border color for active state */
+}
+
+/* Responsive adjustments for category buttons */
+@media screen and (max-width: 768px) {
+    .category-buttons {
+        gap: 0.5rem; /* Reduce spacing between buttons */
+    }
+
+    .category-button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category-button {
+        padding: 6px 12px; /* Further reduce padding */
+        font-size: 0.8rem; /* Reduce font size for smaller screens */
+    }
+
+    .category-buttons {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .category-buttons {
+        margin-top: 50px;
+    }
+}
+
+/* Center and size buttons uniformly */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; /* Adjust spacing between buttons */
+    width: 65%;
+    margin-bottom: 40px; /* Add space below the buttons section */
+}
+
+button.neumorphic {
+    font-weight: bold;
+    margin-top: 20px;
+    aspect-ratio: 1/1;
+    border: 0.5rem solid transparent;
+    border-radius: 1rem;
+    color: hsl(0 0% 10%);
+    background-color: #ffffff;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    --shadow: -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+               .5rem .5rem 1rem hsl(0 0% 50% / .5);
+    box-shadow: var(--shadow);
+    outline: none;
+    transition: all 0.1s;
     overflow: hidden;
-    padding-top: 80px;
-  }
-  
-  .soft-skills-slider {
+    width: 150px; /* Set consistent width */
+    height: 150px; /* Set consistent height */
+}
+
+/* Center icon and text within the button */
+button.neumorphic .icon-container,
+button.neumorphic img.skill-icon,
+button.neumorphic .progress-container {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+/* Soft Skills Section */
+.soft-skills-container {
+    margin: 0 auto;
+    width: 62%; /* Adjusted width for responsiveness */
+    max-width: 1200px; /* Added max-width for larger screens */
+    padding-top: 50px;
+    overflow: hidden; /* Ensures no overflow issues */
+}
+
+.soft-skills-slider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Adjust spacing between soft skills */
     animation: slide 15s linear infinite;
-  }
-  
-  .soft-skill {
+}
+
+.soft-skill {
     flex: 0 0 auto;
-    margin-right: 20px;
-    padding: 30px 45px;
+    padding: 20px 30px;
     background-color: var(--title-color);
     color: #ffffff;
     font-weight: bold;
     border-radius: 5px;
     white-space: nowrap;
-  }
-
-  /* Keyframes for sliding animation */
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-/* For large devices */
-@media screen and (max-width: 992px) {
-    .soft-skills-container {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-
-    .soft-skills-slider {
-        animation: slide 6s linear infinite;
-      }
 }
-    
-/* For medium devices */
+
+/* Adjust slide speed for different devices */
+@media screen and (max-width: 992px) {
+    .soft-skills-slider {
+        animation: slide 10s linear infinite; /* Slightly slower slide for larger devices */
+    }
+
+    .buttons {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 576px) {
     .soft-skills-container {
-        margin-left: 25px;
-        margin-right: 25px;
-        padding-top: 60px;
+        padding-top: 40px;
+        width: 95%; /* Increased width for smaller devices */
     }
 
     .soft-skills-slider {
-        animation: slide 6s linear infinite;
-      }
+        animation: slide 8s linear infinite; /* Adjusted slide speed */
+    }
+
+    .buttons {
+        width: 100%;
+    }
 }
 
-/* For small devices */
 @media screen and (max-width: 350px) {
     .soft-skills-container {
-        margin-left: 12px;
-        margin-right: 12px;
-        padding-top: 50px;
+        padding-top: 30px;
+        width: 90%; /* Full width for very small screens */
     }
 
     .soft-skills-slider {
-        animation: slide 4s linear infinite;
-      }
+        animation: slide 6s linear infinite; /* Faster slide for very small devices */
+    }
+
+    .buttons {
+        width: 100%;
+    }
 }
 
+/* Keyframes for sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 

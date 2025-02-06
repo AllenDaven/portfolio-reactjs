@@ -1,8 +1,6 @@
 import React from 'react';
 import "./about.css";
 import AboutImg from "../../assets/profile.png";
-import CV from "../../assets/ALLEN_DAVEN_ARGALLON-RESUME_LITHAN.pdf";
-import Info from './Info';
 
 const About = () => {
     return (
@@ -14,15 +12,17 @@ const About = () => {
                 <img src={AboutImg} alt="" className="about__image" />
 
                 <div className="about__data">
-                    <Info />
-
                     <p className="about__description">
-                    As a dedicated Full-Stack Developer, I specialize in creating seamless and efficient web applications that bridge the gap between user experience and robust backend functionality. With strong skills in both frontend and backend development, I excel at developing responsive, user-friendly interfaces and scalable server-side solutions. My passion for coding, critical thinking, and problem-solving is matched by my ability to collaborate effectively within a team. I am committed to continuous learning and adapting to the latest industry trends, aiming to contribute meaningfully to the evolving digital landscape with innovative, reliable, and secure projects.
+                        As a dedicated Full-Stack Developer, I thrive on creating seamless and efficient web applications that perfectly balance user experience with robust backend functionality. My expertise spans both frontend and backend development, allowing me to craft responsive, user-friendly interfaces and scalable, reliable server-side solutions. I am deeply passionate about coding and enjoy tackling complex problems through critical thinking and innovative approaches.
+                    </p>
+                    
+                    <p className="about__description">
+                        Collaboration is at the heart of my work, and I excel in team environments where I can contribute and learn from others. I am committed to continuous learning, always staying updated with the latest industry trends and technologies. My goal is to make a meaningful impact in the digital landscape by delivering projects that are not only innovative and efficient but also secure and reliable.
                     </p>
 
-                    <a download="" href={CV} className="button button--flex">Download CV
+                    <a href="https://drive.google.com/file/d/1qKQAv9e8NW3ZvB8yOUBZTYwyIEHnp7kS/view?usp=drive_link" target="_blank" className="button button--flex">View CV
                         <svg
-                            class="button__icon"
+                            className="button__icon"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
@@ -48,14 +48,16 @@ const About = () => {
                         </svg>
                     </a>
 
-                    <a href="" className="button button--flex">
+                    <a href="https://youtu.be/GNDfsQAvM8c" target="_blank" className="button button--flex">
                         Video Introduction
-                        <svg xmlns="http://www.w3.org/2000/svg" class="button__icon"
+                        <svg xmlns="http://www.w3.org/2000/svg" className="button__icon"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
                             fill="none"
-                            id="play"><path fill="var(--container-color)" d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"></path></svg>
+                            id="play">
+                            <path fill="var(--container-color)" d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -63,4 +65,4 @@ const About = () => {
     )
 }
 
-export default About
+export default About;

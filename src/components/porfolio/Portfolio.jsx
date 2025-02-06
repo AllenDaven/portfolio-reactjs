@@ -49,6 +49,34 @@ const Portfolio = () => {
 
                 <div className="portfolio__content">
                     <div>
+                        <img src={MerryMeals} alt="" className="portfolio__img" />
+                        <h3 className="portfolio__title">Wheels On Meals</h3>
+                    </div>
+
+                    <span className="portfolio__button" onClick={() => toggleTab(5)}>View More <i className="uil uil-arrow-right 
+                    portfolio__button-icon"></i></span>
+
+                    <div className={toggleState === 5 ? "portfolio__modal active-modal" : "portfolio__modal"}>
+                        <div className="portfolio__modal-content">
+                            <i onClick={() => toggleTab(0)} className="uil uil-times 
+                            portfolio__modal-close"></i>
+                            <h3 className="portfolio__modal-title">Wheels on Meals</h3>
+                            <p className="portfolio__modal-description">A charity-driven online food delivery service for adults unable to cook due to age, illness, or disability. This solution will streamline the entire process from member and caregiver registration to meal delivery management, ensuring efficient operation and enhanced service delivery.</p>
+
+                            <ul className="portfolio__modal-portfolio grid">
+                                <li className="portfolio__modal-portfolio">
+
+                                    <p className="portfolio__modal-info">Technologies : PHP, Laravel, Blade, API, and  phpMyAdmin</p>
+
+                                    <a href="https://github.com/AllenDaven/merrymeals-meals-on-wheels" className="portfolio__modal-language" target="_blank">SOURCE CODE</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="portfolio__content">
+                    <div>
                         <img src={Enomy} alt="" className="portfolio__img" />
                         <h3 className="portfolio__title">Enomy-Finances</h3>
                     </div>
@@ -102,35 +130,6 @@ const Portfolio = () => {
                         </div>
                     </div>
                 </div>
-
-                <div className="portfolio__content">
-                    <div>
-                        <img src={MerryMeals} alt="" className="portfolio__img" />
-                        <h3 className="portfolio__title">ABC Car Portal</h3>
-                    </div>
-
-                    <span className="portfolio__button" onClick={() => toggleTab(5)}>View More <i className="uil uil-arrow-right 
-                    portfolio__button-icon"></i></span>
-
-                    <div className={toggleState === 5 ? "portfolio__modal active-modal" : "portfolio__modal"}>
-                        <div className="portfolio__modal-content">
-                            <i onClick={() => toggleTab(0)} className="uil uil-times 
-                            portfolio__modal-close"></i>
-                            <h3 className="portfolio__modal-title">Wheels on Meals</h3>
-                            <p className="portfolio__modal-description">A charity-driven online food delivery service for adults unable to cook due to age, illness, or disability. This solution will streamline the entire process from member and caregiver registration to meal delivery management, ensuring efficient operation and enhanced service delivery.</p>
-
-                            <ul className="portfolio__modal-portfolio grid">
-                                <li className="portfolio__modal-portfolio">
-
-                                    <p className="portfolio__modal-info">Technologies : PHP, Laravel, Blade, and  phpMyAdmin</p>
-
-                                    <a href="https://github.com/AllenDaven/merrymeals-meals-on-wheels" className="portfolio__modal-language" target="_blank">SOURCE CODE</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     )

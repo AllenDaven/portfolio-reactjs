@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./skills.css";
 import HTMLIcon from "../../assets/html.png";
 import CSSIcon from "../../assets/css.png";
@@ -23,24 +23,24 @@ import POWERAUTOMATEIcon from "../../assets/powerAutomate.png";
 import COPILOTSTUDIOIcon from "../../assets/copilotStudio.png";
 
 const skills = [
-    { icon: HTMLIcon, name: "HTML", percentage: 95 },
-    { icon: CSSIcon, name: "CSS", percentage: 90 },
-    { icon: JSIcon, name: "JAVASCRIPT", percentage: 80 },
-    { icon: JAVAIcon, name: "JAVA", percentage: 85 },
-    { icon: PHPIcon, name: "PHP", percentage: 80 },
-    { icon: MYSQLIcon, name: "MYSQL", percentage: 90 },
-    { icon: BPIcon, name: "BOOTSTRAP", percentage: 90 },
-    { icon: LARAVELIcon, name: "LARAVEL", percentage: 75 },
-    { icon: SBIcon, name: "SPRING BOOT", percentage: 85 },
-    { icon: SMVCIcon, name: "SPRING MVC", percentage: 80 },
-    { icon: RJSIcon, name: "REACT JS", percentage: 70 },
-    { icon: RAPIIcon, name: "REST API", percentage: 85 },
-    { icon: ARPIcon, name: "AXURE RP", percentage: 80 },
-    { icon: HUBSPOTIcon, name: "HUBSPOT", percentage: 75 },
-    { icon: POSTMANIcon, name: "POSTMAN", percentage: 65 },
-    { icon: POWERBIIcon, name: "POWER BI", percentage: 60 },
-    { icon: POWERAUTOMATEIcon, name: "AUTOMATE", percentage: 75 },
-    { icon: COPILOTSTUDIOIcon, name: "COPILOT", percentage: 80 },
+    { icon: HTMLIcon, name: "HTML", percentage: 95, category: "Front-End" },
+    { icon: CSSIcon, name: "CSS", percentage: 90, category: "Front-End" },
+    { icon: JSIcon, name: "JAVASCRIPT", percentage: 75, category: "Language" },
+    { icon: JAVAIcon, name: "JAVA", percentage: 85, category: "Language" },
+    { icon: PHPIcon, name: "PHP", percentage: 80, category: "Language" },
+    { icon: MYSQLIcon, name: "MYSQL", percentage: 90, category: "Back-End" },
+    { icon: BPIcon, name: "BOOTSTRAP", percentage: 60, category: "Front-End" },
+    { icon: LARAVELIcon, name: "LARAVEL", percentage: 75, category: "Back-End" },
+    { icon: SBIcon, name: "SPRING BOOT", percentage: 85, category: "Back-End" },
+    { icon: SMVCIcon, name: "SPRING MVC", percentage: 80, category: "Back-End" },
+    { icon: RJSIcon, name: "REACT JS", percentage: 70, category: "Front-End" },
+    { icon: RAPIIcon, name: "REST API", percentage: 85, category: "Back-End" },
+    { icon: ARPIcon, name: "AXURE RP", percentage: 80, category: "Tools" },
+    { icon: HUBSPOTIcon, name: "HUBSPOT", percentage: 75, category: "Tools" },
+    { icon: POSTMANIcon, name: "POSTMAN", percentage: 65, category: "Tools" },
+    { icon: POWERBIIcon, name: "POWER BI", percentage: 60, category: "Tools" },
+    { icon: POWERAUTOMATEIcon, name: "AUTOMATE", percentage: 75, category: "Tools" },
+    { icon: COPILOTSTUDIOIcon, name: "COPILOT", percentage: 80, category: "Tools" },
 ];
 
 const softSkills = [
@@ -51,16 +51,27 @@ const softSkills = [
     'Communication',
     'Problem Solving',
     'Teamwork',
-  ];
+];
 
 const Skills = () => {
+    const [activeCategory, setActiveCategory] = useState("Language");
+
+    const filteredSkills = skills.filter(skill => skill.category === activeCategory);
+
     return (
         <section className="skills section" id="skills">
             <h2 className="section__title">Skills</h2>
             <span className="section__subtitle">My Tech Stack & Soft Skills</span>
 
-            <div className="buttons" id="about">
-                {skills.map(skill => (
+            <div className="category-buttons">
+                <button onClick={() => setActiveCategory("Language")} className={`category-button ${activeCategory === "Language" ? "active" : ""}`}>Language</button>
+                <button onClick={() => setActiveCategory("Back-End")} className={`category-button ${activeCategory === "Back-End" ? "active" : ""}`}>Back-End</button>
+                <button onClick={() => setActiveCategory("Front-End")} className={`category-button ${activeCategory === "Front-End" ? "active" : ""}`}>Front-End</button>
+                <button onClick={() => setActiveCategory("Tools")} className={`category-button ${activeCategory === "Tools" ? "active" : ""}`}>Tools</button>
+            </div>
+
+            <div className="buttons">
+                {filteredSkills.map(skill => (
                     <button className="neumorphic" key={skill.name}>
                         <div className="icon-container">
                             <img src={skill.icon} alt={`${skill.name} Icon`} className="skill-icon" />
